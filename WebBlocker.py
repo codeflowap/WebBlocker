@@ -14,7 +14,10 @@ website_list = ["www.facebook.com", "facebook.com", "www.google.com", "google.co
 
 while True:
     # Check whether the current time is between working hours 8-16
-    if dt(dt.now().year, dt.now().month, dt.now().day,8) < dt.now() < dt(dt.now().year, dt.now().month, dt.now().day,16):
+    if dt(dt.now().year, dt.now().month, dt.now().day,8) < dt.now() < dt(dt.now().year, dt.now().month, dt.now().day,22):
         print("Working hours ... WebBlock is running")
+        with open(hostPath, 'r+') as file:
+            content = file.read()
+            print (content)
     time.sleep(5)
         
