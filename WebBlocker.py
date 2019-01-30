@@ -10,7 +10,7 @@ hostPath = r"C:\Windows\System32\drivers\etc\HOSTS"
 redirect = "127.0.0.1"
 
 # Website list to be blocked
-website_list = ["www.facebook.com", "facebook.com", "www.google.com", "google.com"]
+websiteList = ["www.facebook.com", "facebook.com", "www.google.com", "google.com"]
 
 while True:
     # Check whether the current time is between working hours 8-16
@@ -18,6 +18,10 @@ while True:
         print("Working hours ... WebBlock is running")
         with open(hostPath, 'r+') as file:
             content = file.read()
-            print (content)
+            for website in websiteList:
+                if website in content:
+                    pass
+                else:
+                    file.write(redirect + " " + website + "\n")
     time.sleep(5)
         
