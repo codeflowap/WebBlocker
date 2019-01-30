@@ -1,0 +1,1 @@
+This program blocks the websites the user selects in a specific timeframe
